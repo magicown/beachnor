@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="183ddc0d-a51a-493d-9c6e-aaefcbe66850" name="비치노아">
+        <fileTransfer rootFolder="/home/hosting_users/w114_sman" accessType="SFTP" host="sman.w-114.com" port="22" sshConfigId="157e470a-14b0-4cf2-8e33-eb19e1370c53" sshConfig="w114_sman@sman.w-114.com:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
