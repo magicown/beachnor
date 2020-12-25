@@ -80,14 +80,14 @@ jQuery(function($){
 
     <div class="tbl_frm01 tbl_wrap">
     
-    <div class="f_left box_1">
-    <p>기본정보</p>
+    <div class="f_left" style="border:#bab9b9 solid 1px;">
+    <p style="margin:5px; padding:10px;">기본정보</p>
         <table>
         <tbody>
        
        
 
-     <?php /*?> 
+     <?php /*?>
         <tr>
             <th scope="row">사진</th>
             <td>
@@ -104,96 +104,95 @@ jQuery(function($){
 
         <tr>
             <th scope="row"><label for="wr_subject">주문처<strong class="sound_only">필수</strong></label></th>
-            <td>
+            <td colspan="5">
                 <div id="autosave_wrapper">
                     <input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input required" size="16" maxlength="100">
-                    <input type="text" id="wr_12" name="wr_12"  value="<?php echo $write['wr_12'] ?>" class="frm_input" size="16"  >
-                   
-                   <a href="/member_ss_1.php?input=wr_subject&input_1=wr_content&input_2=wr_link1&input_3=wr_link2&input_4=wr_email&input_5=wr_homepage&input_6=wr_12" class="win_member button white small">찾기</a>
+                   <a href="/order_list.php?input=wr_subject&input_1=wr_content&input_2=wr_link1&input_3=wr_link2&input_4=wr_email&input_5=wr_homepage&input_6=wr_12" class="win_member button white small">찾기</a>
                 </div>
             </td>
         </tr>
 
         <tr>
             <th scope="row">주문번호</th>
-            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value="#"></td>
-        </tr>
-
-        <tr>
+            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value=""></td>
             <th scope="row">상품명</th>
-            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value="#"></td>
-        </tr>
-
-        <tr>
+            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value=""></td>
             <th scope="row"><label for="wr_content">상품분류<strong class="sound_only">필수</strong></label></th>
             <td class="wr_content">
-            
-            <input type="radio" name="wr_content" value="남" id="nan" <? if($content=="남"||!$content){?> checked <? }?> > 남
-            
-            <input type="radio" name="wr_content" value="여" id="nv" <? if($content=="여"){?> checked <? }?> > 여
-            
-            
-           <?php /*?> <input type="text" name="wr_content" value="<?php echo $content ?>" id="wr_content" required class="frm_input required" size="4" maxlength="1"><?php */?>
-            
-       
-              
+                <input type="radio" name="wr_content" value="남" id="nan" <? if($content=="남"||!$content){?> checked <? }?> > 남
+                <input type="radio" name="wr_content" value="여" id="nv" <? if($content=="여"){?> checked <? }?> > 여
             </td>
         </tr>
 
         <tr>
+
+        </tr>
+
+        <tr>
+
+        </tr>
+
+        <tr>
             <th scope="row">상품사진</th>
-            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value="#"></td>
+            <td colspan="5"><input type="file" name="wr_8" id="wr_8" class="frm_input"  value=""></td>
+
         </tr>
 
 
         <tr>
             <th scope="row">옵션</th>
-            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value="#"></td>
-        </tr>
-		
-
-        <tr>
+            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value=""></td>
             <th scope="row">수량</th>
-            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value="#"></td>
+            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value=""></td>
+            <th scope="row">금액</th>
+            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value=""></td>
+        </tr>
+
+
+        <tr>
+
         </tr>
 
         <tr>
-            <th scope="row">금액</th>
-            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value="#"></td>
+
         </tr>
 
         <tr>
             <th scope="row">주문일</th>
             <td><input type="text" name="wr_7" id="wr_7" class="frm_input"  value="<?=$write['wr_7']?>"></td>
-        </tr>
-        
-
-        <tr>
             <th scope="row">주문자명</th>
-            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value="#"></td>
-        </tr>
-
-        <tr>
+            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value=""></td>
             <th scope="row">수취자명</th>
-            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value="#"></td>
+            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value=""></td>
         </tr>
 
          <tr>
             <th scope="row"><label for="wr_homepage">배송지</label></th>
-            <td><input type="text" name="wr_homepage" value="<?php echo $homepage ?>" id="wr_homepage" class="frm_input" size="50"></td>
+             <td colspan="5">
+                 <label for="reg_mb_zip1" class="sound_only">우편번호 앞자리<?php echo $config['cf_req_addr']?'<strong class="sound_only"> 필수</strong>':''; ?></label>
+                 <input type="text" name="wr_12" value="<?php echo $write['wr_12'] ?>" id="wr_12" <?php echo $config['cf_req_addr']?"required":""; ?> class="frm_input <?php echo $config['cf_req_addr']?"required":""; ?>" size="9" maxlength="3">
+                 -
+                 <label for="reg_mb_zip2" class="sound_only">우편번호 뒷자리<?php echo $config['cf_req_addr']?'<strong class="sound_only"> 필수</strong>':''; ?></label>
+                 <input type="text" name="wr_13" value="<?php echo $write['wr_13'] ?>" id="reg_mb_zip2" <?php echo $config['cf_req_addr']?"required":""; ?> class="frm_input <?php echo $config['cf_req_addr']?"required":""; ?>" size="9" maxlength="3">
+                 <button type="button" class="btn_frmline" onclick="execPostCode('fwrite', 'mb_zip1', 'mb_zip2', 'mb_addr1', 'mb_addr2', 'mb_addr3', 'mb_addr_jibeon');">주소 검색</button><br>
+                 <input type="text" name="wr_14" value="<?php echo $write['wr_14'] ?>" id="wr_14" <?php echo $config['cf_req_addr']?"required":""; ?> class="frm_input frm_address <?php echo $config['cf_req_addr']?"required":""; ?>" size="50">
+                 <label for="reg_mb_addr1">기본주소<?php echo $config['cf_req_addr']?'<strong class="sound_only"> 필수</strong>':''; ?></label><br>
+                 <input type="text" name="wr_15" value="<?php echo $write['wr_15'] ?>" id="reg_mb_addr2" class="frm_input frm_address" size="50">
+                 <label for="reg_mb_addr2">상세주소</label>
+                 <br>
+                 <input type="text" name="wr_16" value="<?php echo $write['wr_16'] ?>" id="reg_mb_addr3" class="frm_input frm_address" size="50" readonly="readonly">
+                 <label for="reg_mb_addr3">참고항목</label>
+                 <input type="hidden" name="wr_17" value="<?php echo $write['wr_17']; ?>">
+             </td>
         </tr>
 
         <tr>
             <th scope="row">배송업체명</th>
-            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value="#"></td>
-        </tr>
-        
-        <tr>
+            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value=""></td>
+
             <th scope="row">배송일</th>
             <td><input type="text" name="wr_7" id="wr_7" class="frm_input"  value="<?=$write['wr_7']?>"></td>
-        </tr>
-
-        <tr>
+        
             <th scope="row">전화번호</th>
             <td> <input type="text" name="wr_15" id="wr_15" class="frm_input" value="<?=$write['wr_15']?>">
             </td>
@@ -202,18 +201,34 @@ jQuery(function($){
         <tr>
             <th scope="row">휴대폰</th>
             <td class="wr_content">
-            <input type="text" name="wr_16" id="wr_16" class="frm_input"  value="<?=$write['wr_16']?>">
+                <input type="text" name="wr_16" id="wr_16" class="frm_input"  value="<?=$write['wr_16']?>">
+            </td>
+            <th scope="row">발주확인</th>
+            <td class="wr_content">
+                <input type="text" name="wr_16" id="wr_16" class="frm_input"  value="<?=$write['wr_16']?>">
+            </td>
+            <th scope="row">작업자</th>
+            <td class="wr_content">
+                <input type="text" name="wr_16" id="wr_16" class="frm_input"  value="<?=$write['wr_16']?>">
             </td>
         </tr>
 
         <tr>
-            <th scope="row">비고</th>
-            <td><input type="text" name="wr_8" id="wr_8" class="frm_input"  value="#"></td>
+            <th scope="row">여분</th>
+            <td colspan="5">
+                <input type="text" name="wr_8" id="wr_8" class="frm_input" size="50"  value="">
+            </td>
         </tr>
+     <tr>
+         <th scope="row">비고</th>
+         <td colspan="5">
+             <input type="text" name="wr_8" id="wr_8" class="frm_input" size="50"  value="">
+         </td>
 
+     </tr>
            <tr>
             <th scope="row">상태</th>
-            <td> <select name="ca_name" id="ca_name" required class="required" >
+            <td colspan="5"> <select name="ca_name" id="ca_name" class="frm_input" required class="required" >
                     <option value="">선택하세요</option>
                     <?php echo $category_option ?>
                 </select></td>

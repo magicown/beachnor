@@ -3,6 +3,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0);
+ini_set('display_errors',1)
 ?>
 <link type="text/css" href="/css/jquery-ui.css" rel="stylesheet" />
 <style>
@@ -84,16 +85,7 @@ jQuery(function($){
           <tr>
             <th scope="row">상품코드</th>
             <td>
-				<? $categoli = list_cate("a3지역");?>
-                <select name="wr_subject" id=""  required>
-                <?
-                for($i=0;$i<count($categoli); $i++){
-                ?>
-                    <option value="<?=$categoli[$i]?>" <? if(trim($categoli[$i])==trim($write['wr_subject'])){?> selected<? }?>><?=$categoli[$i]?></option>
-                <? }?>	
-                    
-                </select>
-                <?=edt_cate("a3지역")?>            
+                <input type="text" name="wr_1" id="wr_1" class="frm_input" value="<?php echo $write['wr_1']; ?>">
             </td>
           </tr>
           
@@ -102,8 +94,9 @@ jQuery(function($){
           <tr>
             <th scope="row">상품분류</th>
             <td>
+
 				<? $categoli = list_cate("a3지역");?>
-                <select name="wr_subject" id=""  required>
+                <select name="wr_subject" id="wr_subject"  required class="frm_input">
                 <?
                 for($i=0;$i<count($categoli); $i++){
                 ?>
@@ -111,7 +104,7 @@ jQuery(function($){
                 <? }?>	
                     
                 </select>
-                <?=edt_cate("a3지역")?>            
+                <?=edt_cate("a3지역")?>
             </td>
           </tr>
           
@@ -121,7 +114,7 @@ jQuery(function($){
             <th scope="row">상품명</th>
             <td>
             
-        <input type="text" name="wr_4" value="<?=$write['wr_4']?>" id="wr_4" class="frm_input" size="12" maxlength="11"> 원
+        <input type="text" name="wr_2" value="<?=$write['wr_2']?>" id="wr_2" class="frm_input" size="12" maxlength="11">
             
             
             </td>
@@ -132,7 +125,7 @@ jQuery(function($){
             <th scope="row">가격</th>
             <td>
             
-        <input type="text" name="wr_4" value="<?=$write['wr_4']?>" id="wr_4" class="frm_input" size="12" maxlength="11"> 원
+        <input type="text" name="wr_3" value="<?=$write['wr_3']?>" id="wr_3" class="frm_input" size="12" maxlength="11"> 원
             
             
             </td>
@@ -144,9 +137,16 @@ jQuery(function($){
             <th scope="row">공장거래처</th>
             <td>
             
-           <select name="ca_name" id="ca_name" required class="required" >
-                    <option value="">선택하세요</option>
-                    <?php echo $category_option ?>
+           <select name="wr_5" id="wr_5" class="frm_input" >
+               <option value="">선택하세요</option>
+               <?php
+                $que = "SELECT * FROM g5_write_a_5 WHERE 1";
+
+                $res = sql_query($que);
+                while($arr = sql_fetch_array($res)){
+               ?>
+                    <option value="<?php echo $arr['wr_subject']; ?>" <?php echo ($write['wr_5']==$arr['wr_subject'])?'selected':'';?>><?php echo $arr['wr_subject']; ?></option>
+               <?php } ?>
                 </select>
             
             
@@ -157,8 +157,13 @@ jQuery(function($){
              <tr>
             <th scope="row">상태</th>
             <td>
-            
-        <input type="text" name="wr_4" value="<?=$write['wr_4']?>" id="wr_4" class="frm_input" size="12" maxlength="11"> 원
+
+                <select name="ca_name" id="wr_4" class="frm_input">
+                    <option value="판매중" <?php echo ($write['ca_name']=='판매중')?'selected':'';?>>판매중</option>
+                    <option value="판매대기" <?php echo ($write['ca_name']=='판매대기')?'selected':'';?>>판매대기</option>
+                    <option value="보류" <?php echo ($write['ca_name']=='보류')?'selected':'';?>>보류</option>
+                </select>
+
             
             
             </td>
@@ -263,9 +268,7 @@ jQuery(function($){
     }
     </script> 
   <script>
-$(function(){
-    $("#wr_3").datepicker({ changeMonth: true, changeYear: true, dateFormat: "yy-mm-dd", showButtonPanel: true, yearRange: "c-99:c+99", maxDate: "+0d" });
-});
+
 </script> 
 </section>
 <!-- } 게시물 작성/수정 끝 -->

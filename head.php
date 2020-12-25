@@ -104,8 +104,18 @@ if (G5_IS_MOBILE) {
   }
   
     if($bo_table=="a_5"){
-	  $sty_8 = "menu_on";
+	  $sty_5 = "menu_on";
 	  
+  }
+
+  if($bo_table=="a_9"){
+      $sty_9 = "menu_on";
+
+  }
+
+  if($bo_table=="a_10"){
+      $sty_10 = "menu_on";
+
   }
   ?>
   <div class="container">
@@ -161,20 +171,20 @@ if (G5_IS_MOBILE) {
       <? }?>
       
       <? if($member['mb_level']=="7" || $is_admin){?>
-      <li><a href="/bbs/board.php?bo_table=a_5"  class="<?=$sty_8?>">공장거래처</a></li>
+      <li><a href="/bbs/board.php?bo_table=a_5"  class="<?=$sty_5?>">공장거래처</a></li>
       <? }?>
 
       <? if($member['mb_level']=="7" || $is_admin){?>
-      <li><a href="/bbs/board.php?bo_table=a_9"  class="<?=$sty_8?>">배송업체</a></li>
+      <li><a href="/bbs/board.php?bo_table=a_9"  class="<?=$sty_9?>">배송업체</a></li>
       <? }?>
 
       <? if($member['mb_level']=="7" || $is_admin){?>
-      <li><a href="/bbs/board.php?bo_table=a_10"  class="<?=$sty_8?>">주문처</a></li>
+      <li><a href="/bbs/board.php?bo_table=a_10"  class="<?=$sty_10?>">주문처</a></li>
       <? }?>
       
       <li><a href="/bbs/board.php?bo_table=a_8" class="<?=$sty_4?>">1:1업무게시판</a></li>
       <li><a href="/bbs/board.php?bo_table=a_7" class="<?=$sty_6?>">공지사항</a></li>
-      <li><a href="/bbs/board.php?bo_table=a_6" class="<?=$sty_5?>">자료실</a></li>
+      <li><a href="/bbs/board.php?bo_table=a_5" class="<?=$sty_5?>">자료실</a></li>
       <?
       if($member['mb_level']==10){
 	  ?>

@@ -17,7 +17,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 <!-- 게시물 읽기 시작 { -->
 
 <div id="box_view">
-<div id="bo_v_table"><?php echo $board['bo_subject']; ?></div>
+<!--<div id="bo_v_table">--><?php //echo $board['bo_subject']; ?><!--</div>-->
 
 
 <div class="tbl_frm01 tbl_wrap">
@@ -40,13 +40,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         
           <tr>
             <th scope="row">상품명</th>
-            <td><?php echo $view['wr_link2'] ?></td>
+            <td><?php echo $view['wr_2'] ?></td>
           </tr>
           
             <tr>
             <th scope="row">가격</th>
             <td class="wr_content">
-         <?php echo $view['wr_content'] ?>
+         <?php echo $view['wr_3'] ?>
             
          
          </td>
@@ -57,14 +57,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <th scope="row">공장거래처</th>
             <td>
 			 
-            <?php echo $view['wr_2'] ?>
+            <?php echo $view['wr_5'] ?>
             
             </td>
           </tr>
           <tr>
             <th scope="row">상태</th>
             <td>
-        <?php echo $view['wr_3'] ?>     
+        <?php echo $view['ca_name'] ?>
         
             
             </td>

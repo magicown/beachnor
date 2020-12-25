@@ -150,7 +150,7 @@ $(function(){
                 ?>
 
                
-                    <?php echo $list[$i]['subject'] ?>
+                    <?php echo $list[$i]['wr_subject'] ?>
                   
                
 
@@ -166,15 +166,15 @@ $(function(){
 
                  ?>
             </td>
+            <td><?php echo $list[$i]['wr_7'] ?></td>
             <td><?php echo $list[$i]['wr_1'] ?></td>
-            <td><?php echo $list[$i]['wr_link1'] ?></td>
-            <td><?php echo $list[$i]['wr_content'] ?></td>
-            <td><?php echo $list[$i]['wr_content'] ?></td>
-            <td><?php echo $list[$i]['wr_content'] ?></td>
-            <td><?php echo $list[$i]['wr_content'] ?></td>
-            <td><?php echo $list[$i]['wr_content'] ?></td>
-             <td><?php echo $list[$i]['wr_2'] ?></td>
-              <td><?php echo $list[$i]['ca_name'] ?></td>
+            <td><?php echo $list[$i]['wr_2'] ?></td>
+            <td><?php echo $list[$i]['wr_3'] ?></td>
+            <td><?php echo $list[$i]['wr_4'] ?></td>
+            <td><?php echo $list[$i]['wr_14']." ".$list[$i]['wr_15'] ?></td>
+            <td><?php echo $list[$i]['wr_5'] ?></td>
+            <td><?php echo $list[$i]['wr_6'] ?></td>
+            <td><?php echo $list[$i]['ca_name'] ?></td>
               
              <?
             if($typ!=1 && $member['mb_level']!="8" && $member['mb_level']!="7" && $member['mb_level']!="6" && $member['mb_level']!="5"){

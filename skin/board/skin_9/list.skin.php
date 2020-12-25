@@ -21,23 +21,7 @@ $(function(){
 
 <h2 id="container_title"><?php echo $board['bo_subject'] ?><span class="sound_only"> 목록</span></h2>
 
-<!-- 게시판 목록 시작 { -->
-<div id="bo_list" style="width:<?php echo $width; ?>">
 
-    <!-- 게시판 카테고리 시작 { -->
-    <?php if ($is_category) { ?>
-    <nav id="bo_cate">
-        <h2><?php echo $board['bo_subject'] ?> 카테고리</h2>
-        <ul id="bo_cate_ul">
-            <?php echo $category_option ?>
-        </ul>
-    </nav>
-    <?php } ?>
-    <!-- } 게시판 카테고리 끝 -->
-
-   <div class="sso">
-<a href="javascript:;" onclick="dis('bo_fx');">검색</a>
-</div>
 
 
 
@@ -117,7 +101,7 @@ $(function(){
                 <input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
             </td>
             <?php } ?>
-             <td><?php echo $list[$i]['wr_1'] ?></td>
+             <td style="text-align:left;"><?php echo $list[$i]['wr_subject'] ?></td>
  
   
                     <td> <a href="<?php echo $list[$i]['href'] ?>"><strong style="color:#FF575A">보기</strong></a></td>
@@ -140,7 +124,7 @@ $(function(){
 
         <?php if ($list_href || $write_href) { ?>
         <ul class="btn_bo_user">
-            <?php if ($write_href&&$member['mb_level']!=7) { ?><li><a href="/dex_a_3.php?sca=<?=$sca.$search_lk?>" class="button blue">엑셀다운</a></li><?php } ?>
+            <?php if ($write_href&&$member['mb_level']!=7) { ?><li><a href="/dex_a_9.php?sca=<?=$sca.$search_lk?>" class="button blue">엑셀다운</a></li><?php } ?>
             <?php if ($list_href) { ?><li><a href="<?php echo $list_href ?>" class="button black">목록</a></li><?php } ?>
             <?php if ($write_href&&$member['mb_level']!=7) { ?><li><a href="<?php echo $write_href ?>" class="button black">등록하기</a></li><?php } ?>
         </ul>

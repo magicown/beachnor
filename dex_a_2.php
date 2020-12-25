@@ -1,6 +1,6 @@
 <?php
 include_once('./_common.php');
-$filename = '대근관리'.date("Y-m-d H:i:s").'.xls';
+$filename = '유통거래처'.date("Y-m-d H:i:s").'.xls';
 header("Content-type: application/vnd.ms-excel" );
 header("Content-Disposition: attachment; filename=".$filename);
 
@@ -35,20 +35,28 @@ $res = sql_query($sql.$order);
 <body>
 <table border="1">
     <tr>
-        <td>원근무자</td>
-        <td>기관(업체)</td>
-        <td>대근자</td>
-        <td>반</td>
-        <td>대근일</td>
-        <td>결과</td>
+        <td>거래처명</td>
+        <td>사업자등록번호</td>
+        <td>대표자명</td>
+        <td>담당자명</td>
+        <td>전화번호</td>
+        <td>휴대폰번호</td>
+        <td>주소</td>
+        <td>계약일</td>
+        <td>비고</td>
+        <td>상태</td>
     </tr>
     <?php while($arr=sql_fetch_array($res)){ ?>
     <tr>
         <td><?php echo $arr['wr_subject'] ?></td>
+        <td><?php echo $arr['wr_7'] ?></td>
         <td><?php echo $arr['wr_1'] ?></td>
-        <td><?php echo $arr['wr_link1'] ?></td>
-        <td><?php echo $arr['wr_content'] ?></td>
         <td><?php echo $arr['wr_2'] ?></td>
+        <td><?php echo $arr['wr_3'] ?></td>
+        <td><?php echo $arr['wr_4'] ?></td>
+        <td><?php echo $arr['wr_14']." ".$arr['wr_15'] ?></td>
+        <td><?php echo $arr['wr_5'] ?></td>
+        <td><?php echo $arr['wr_6'] ?></td>
         <td><?php echo $arr['ca_name'] ?></td>
     </tr>
     <?php } ?>

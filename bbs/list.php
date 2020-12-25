@@ -77,16 +77,12 @@ if ($search_or) {
 	
 	
 	
-	//대근관리 검색
+	//유통거래처 검색
 	if($bo_table=='a_2'){
 		$sql_search .= $s_subject?" and `wr_subject` like '%".$s_subject."%'":'';
-		$sql_search .= $s_1?" and `wr_1` like '%".$s_1."%'":'';
-		$sql_search .= $s_link1?" and `wr_link1` like '%".$s_link1."%'":'';
-		$sql_search .= $s_content?" and `wr_content` like '%".$s_content."%'":'';
-		$sql_search .= $sdate1?" and `wr_2`>='{$sdate1}' ":'';
-		$sql_search .= $edate1?" and `wr_2`<='{$edate1}' ":'';
-		//해당 기관 인력만 나오게 하기
-		$sql_search = $sql_search." and `wr_1`='".$member['mb_name']."' ";
+        $sql_search .= $s_1?" and `wr_1` like '%".$s_1."%'":'';
+        $sql_search .= $s_2?" and `wr_2` like '%".$s_2."%'":'';
+        $sql_search .= $s_7?" and `wr_7` like '%".$s_7."%'":'';
 	}
 	
 	//실적현황 검색
@@ -115,13 +111,12 @@ if ($search_or) {
 		$sql_search .= $edate2?" and `wr_4`<='{$edate2}' ":'';
 	}
 	
-	//지점별 정산 현황 보고서 검색
+	//공장거래처 검색
 	if($bo_table=='a_5'){
 		$sql_search .= $s_subject?" and `wr_subject` like '%".$s_subject."%'":'';
-		$sql_search .= $s_4?" and `wr_4` like '%".$s_4."%'":'';
-		$sql_search .= $s_content?" and `wr_content` like '%".$s_content."%'":'';
-		$sql_search .= $sdate1?" and `wr_3`>='{$sdate1}' ":'';
-		$sql_search .= $edate1?" and `wr_3`<='{$edate1}' ":'';
+        $sql_search .= $s_1?" and `wr_1` like '%".$s_1."%'":'';
+        $sql_search .= $s_2?" and `wr_2` like '%".$s_2."%'":'';
+        $sql_search .= $s_7?" and `wr_7` like '%".$s_7."%'":'';
 	}
 	
 	

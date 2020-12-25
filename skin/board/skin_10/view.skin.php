@@ -17,7 +17,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 <!-- 게시물 읽기 시작 { -->
 
 <div id="box_view">
-<div id="bo_v_table"><?php echo $board['bo_subject']; ?></div>
+<!--<div id="bo_v_table"><?php /*echo $board['bo_subject']; */?></div>-->
 
 
 <div class="tbl_frm01 tbl_wrap">
@@ -28,7 +28,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <tbody>
           <tr>
             <th scope="row">주문처명</th>
-            <td><?php echo $view['wr_1'] ?></td>
+            <td><?php echo $view['wr_subject'] ?></td>
           </tr>
           
           

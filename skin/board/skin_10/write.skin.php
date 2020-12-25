@@ -84,16 +84,7 @@ jQuery(function($){
           <tr>
             <th scope="row">주문처명</th>
             <td>
-				<? $categoli = list_cate("a3지역");?>
-                <select name="wr_subject" id=""  required>
-                <?
-                for($i=0;$i<count($categoli); $i++){
-                ?>
-                    <option value="<?=$categoli[$i]?>" <? if(trim($categoli[$i])==trim($write['wr_subject'])){?> selected<? }?>><?=$categoli[$i]?></option>
-                <? }?>	
-                    
-                </select>
-                <?=edt_cate("a3지역")?>            
+                <input type="text" name="wr_subject" id="wr_subject" class="frm_input" value="<?php echo $write['wr_subject']; ?>">
             </td>
           </tr>
           

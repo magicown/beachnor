@@ -45,22 +45,22 @@ $(function(){
     <div class="bo_fx" id="bo_fx" <? if($_GET['sso']==1){?> style="display:block" <? }?>>
       <fieldset id="bo_sch">
       <legend>게시물 검색</legend>
-      <form name="fsearch" method="get">
-        <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
-        <input type="hidden" name="sca" value="<?php echo $sca ?>">
-        상품코드:
-        <input type="text" name="s_1" value="<?=$s_1?>" size="15">
-        
-        상품명:
-        <input type="text" name="s_subject" value="<?=$s_subject?>" size="15">
-        
-        공장거래처:
-        <input type="text" name="s_link2" value="<?=$s_link2?>" size="15">
-        
-        상태:
-        <input type="text" name="s_content" value="<?=$s_content?>" size="15">
-        
-         </form>
+          <form name="fsearch" method="get">
+            <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
+            <input type="hidden" name="sca" value="<?php echo $sca ?>">
+            상품코드:
+            <input type="text" name="s_1" value="<?=$s_1?>" size="15">
+
+            상품명:
+            <input type="text" name="s_subject" value="<?=$s_subject?>" size="15">
+
+            공장거래처:
+            <input type="text" name="s_link2" value="<?=$s_link2?>" size="15">
+
+            상태:
+            <input type="text" name="s_content" value="<?=$s_content?>" size="15">
+
+          </form>
       </fieldset>
       <!-- } 게시판 검색 끝 --> 
     </div>
@@ -92,11 +92,11 @@ $(function(){
             
             <th scope="col">상품코드</th>
             <th scope="col">상품분류</th>
-            
             <th scope="col">상품명</th>
-            <th scope="col">상품사진</th>
+            <!--<th scope="col">상품사진</th>-->
             <th scope="col">가격</th>
             <th scope="col">공장거래처</th>
+            <th scope="col">상태</th>
            <?
             if($member['mb_level']!=7){
             ?>
@@ -135,11 +135,11 @@ $(function(){
              
             <td>
                 <?php
-                echo $list[$i]['icon_reply'];
+                //echo $list[$i]['icon_reply'];
                 ?>
 
                
-                    <?php echo $list[$i]['subject'] ?>
+                    <?php echo $list[$i]['wr_subject'] ?>
                   
                
 
@@ -147,7 +147,7 @@ $(function(){
                 // if ($list[$i]['link']['count']) { echo '['.$list[$i]['link']['count']}.']'; }
                 // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
 
-                if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
+                //if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
                 //if (isset($list[$i]['icon_hot'])) echo $list[$i]['icon_hot'];
                 //if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
                 //if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
@@ -156,16 +156,13 @@ $(function(){
                  ?>
             </td>
            
-            <td><?php echo $list[$i]['wr_link2'] ?></td>
-            <td><?php echo $list[$i]['wr_content'] ?></td>
+            <td><?php echo $list[$i]['wr_2'] ?></td>
+            <!--<td><?php /*echo $list[$i]['wr_content'] */?></td>-->
             
-             <td><?php echo $list[$i]['wr_2'] ?></td>
-              <td><?php echo $list[$i]['wr_3'] ?></td>
-      
-
-
-
-                    <td> <a href="<?php echo $list[$i]['href'] ?>"><strong style="color:#FF575A">보기</strong></a></td>
+            <td><?php echo $list[$i]['wr_3'] ?></td>
+            <td><?php echo $list[$i]['wr_5'] ?></td>
+            <td><?php echo $list[$i]['ca_name'] ?></td>
+            <td> <a href="<?php echo $list[$i]['href'] ?>"><strong style="color:#FF575A">보기</strong></a></td>
              
         </tr>
         <?php } ?>
